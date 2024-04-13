@@ -1,0 +1,37 @@
+import personasspa.*
+import spa.*
+
+test "spa atiende a olivia y su concetracion aumneta a 9" {
+	spa.atender(olivia)
+	assert.equals(9, olivia.gradoDeConcentracion())
+}
+
+test "spa atiende a bruno y este termina perecto" {
+	spa.atender(bruno)
+	assert.notThat(bruno.estaPerfecto())
+}
+
+test "spa atiende a ramiro y ya no esta contracturado" {
+	spa.atender(ramiro)
+	assert.equals(0, ramiro.nivelContractura())
+}
+
+test "olivia discute y la concentracion pasa a ser 5" {
+	olivia.discute()
+	assert.equals(5, olivia.gradoDeConcentracion())
+}
+
+test "bruno pasa un medio dia en casa y no termina perfecto" {
+	bruno.medioDiaEnCasa()
+	assert.notThat(bruno.estaPerfecto())
+}
+
+test "ramiro pasa un dia de trabajo y termina con 2 de contractura" {
+	ramiro.diaDeTrabajo()
+	assert.equals(2, ramiro.nivelContractura())
+}
+
+test "ramiro pasa un dia de trabajo y termina con la piel grasosa" {
+	ramiro.diaDeTrabajo()
+	assert.that(ramiro.estadoPiel())
+}
